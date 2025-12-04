@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COOKING - Simple and Tasty Recipes</title>
@@ -9,106 +10,141 @@
     <!-- salvataggio di file statici -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<!-- barra iniziale -->
-<header class="main-header">
-    <!-- pulsanti in alto a sinistra-->
-    <div class="header-left">
+    <!-- Blocco iniziale che contiene: menu, pulsanti utente e logo-->
+    <header class="main-header">
 
-        <button id="menu-toggle" class="icon-btn" aria-expanded="false" aria-controls="sidebar-menu">
-            <i class="fas fa-bars"></i>
-        </button>
+        <!-- menù a sbarre è menù di ricerca -->
 
-        
-        <div class="search-pill-container">
-            <button id="search-toggle-inline" class="search-pill-btn" aria-label="Apri barra di ricerca">
-                <i class="fas fa-search search-pill-icon"></i>
-                <span class="search-pill-text"> Cerca la tua ricetta </span>
+        <div class="header-left">
+
+            <button id="menu-toggle" class="icon-btn" aria-expanded="false" aria-controls="sidebar-menu">
+                <i class="fas fa-bars"></i>
             </button>
+
+
+            <div class="search-pill-container">
+                <button id="search-toggle-inline" class="search-pill-btn" aria-label="Apri barra di ricerca">
+                    <i class="fas fa-search search-pill-icon"></i>
+                    <span class="search-pill-text"> Cerca la tua ricetta </span>
+                </button>
+            </div>
+
+
         </div>
 
+        <!-- container per il logo -->
+        <div class="logo-center-container">
 
-    </div>
+            <div class="logo-title left-title">Coocking</div>
 
-    <div class="logo-center-container">
-        
-        <div class="logo-title left-title">Coocking</div>
-        
             <div class="logo-center">
                 <img src="images/Logo.png" alt="COOKING Logo" class="main-logo-img">
             </div>
-        
-        <div class="logo-title right-title">Webbers</div>
-        
-    </div>
-    
-    <div class="header-right">
-        <div class="user-menu-container">
-            <button id="user-menu-toggle" class="user-btn" aria-expanded="false" aria-controls="user-dropdown">
-                <div class="user-avatar-circle">
-                    <img src="images/icona_login.png" alt="Ospite" class="user-avatar-img">
-                </div>
-                <i class="fas fa-chevron-down user-arrow"></i>
-            </button>
 
-            <div id="user-dropdown" class="user-dropdown-menu" aria-hidden="true">
-                <ul>
-    
-                    <li><a href="login.php">Accedi / Registrati</a></li>
-                    <li><a href="profile.php">Il mio Profilo</a></li>
-                    <li class="separator"></li>
-                    <li><a href="logout.php">Esci</a></li>
-                </ul>
+            <div class="logo-title right-title">Webbers</div>
+
+        </div>
+
+        <!-- conteiner per il login dell'utente -->
+        <div class="header-right">
+            <div class="user-menu-container">
+                <button id="user-menu-toggle" class="user-btn" aria-expanded="false" aria-controls="user-dropdown">
+                    <div class="user-avatar-circle">
+                        <img src="images/icona_login.png" alt="Ospite" class="user-avatar-img">
+                    </div>
+                    <i class="fas fa-chevron-down user-arrow"></i>
+                </button>
+
+
+                <div id="user-dropdown" class="user-dropdown-menu" aria-hidden="true">
+                    <ul>
+
+                        <li><a href="login.php">Accedi / Registrati</a></li>
+                        <li><a href="profile.php">Il mio Profilo</a></li>
+                        <li class="separator"></li>
+                        <li><a href="logout.php">Esci</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<nav id="sidebar-menu" class="sidebar-menu" aria-hidden="true">
-    <div class="sidebar-header">
-        <h3>Menu</h3>
-        <button class="close-btn" onclick="toggleSidebar(false)">&times;</button>
+    <!-- container per il video di background-->
+    <div class="video-sfondo">
+        <video autoplay muted loop playsinline>
+            <source src="video/background2.mp4" type="video/mp4">
+        </video>
     </div>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Ricette Categoria 1</a></li>
-        <li><a href="#">Ricette Categoria 2</a></li>
-        <li><a href="#">Contatti</a></li>
-    </ul>
-</nav>
 
-<div id="search-bar-overlay" class="search-overlay" aria-hidden="true">
-    <form action="search_results.php" method="GET" class="search-form">
-        <i class=""fas fa-search search-icon-inline></i>
-        <input type="text" name="query" placeholder="Cerca ricette, ingredienti..." required>
-        <button type="submit" class="icon-btn search-submit-btn"><i class="fas fa-search"></i></button>
-        <button type="button" class="close-btn" onclick="toggleSearchBar(false)">&times;</button>
-    </form>
-</div>
+    <div id="search-bar-overlay" class="search-overlay" aria-hidden="true">
+        <form action="search_results.php" method="GET" class="search-form">
+            <i class="fas fa-search search-icon-inline"></i>
+            <input type="text" name="query" placeholder="Cerca ricette, ingredienti..." required>
+            <button type="submit" class="icon-btn search-submit-btn"><i class="fas fa-search"></i></button>
+            <button type="button" class="close-btn" onclick="toggleSearchBar(false)">&times;</button>
+        </form>
+    </div>
+
+    <section class="recipes-section">
+        <h2 class="section-title">OUR RECIPES</h2>
+        <p class="section-subtitle">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health
+            filters.</p>
+
+        <div class="recipes-carousel">
+            
+            <button class="carousel-nav-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="recipe-cards-container">
+                <?php
+                    // Qui verrà incluso il codice PHP per la connessione al database e la visualizzazione delle ricette.
+                    // Vedere la Sezione 3 (Codice PHP) per l'implementazione.
+                    include 'fetch_recipes.php';
+                ?>
+            </div>
+
+            <button class="carousel-nav-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1>SIMPLE AND TASTY RECIPES</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nunc ipsum, dictum et. Feugiat scelerisque morbi.</p>
-            <a href="#" class="btn btn-primary">GET STARTED →</a>
-        </div>
-        <div class="hero-image">
-            <img src="assets/hero_fruits.jpg" alt="Mixed Fruit Salad" class="main-fruit-image">
-            <div class="social-profile-card">
-                <img src="assets/kylie_doe.jpg" alt="Kylie Doe" class="profile-pic">
-                <div class="profile-info">
-                    <strong>Kylie Doe</strong>
-                    <span>Food Enthusiast</span>
+            <div class="recipe-cards-container">
+            <a href="dettaglio_ricetta.php?id=1" class="recipe-card">
+        
+                <div class="recipe-image-wrapper">
+                    <img src="images/ricette/tacos.png" alt="Sprout Salad" class="recipe-img">
                 </div>
+
+                <div class="recipe-info">
+                    <div class="recipe-actions">
+                        <i class="fas fa-star filled"></i>
+                    </div>
+            
+                    <h3 class="recipe-title">Sprout Salad with Soft Boiled Eggs</h3>
+                    <p class="recipe-description">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health filters.</p>
+
+                    <div class="recipe-metadata">
+                        <span><i class="far fa-clock"></i> 20 mins</span>
+                        <span><i class="fas fa-signal"></i> Easy</span>
+                        <span><i class="fas fa-users"></i> 2 persons</span>
+                    </div>
+                </div>
+            </a>
             </div>
         </div>
     </section>
 
     <section class="recipes-section">
         <h2 class="section-title">OUR RECIPES</h2>
-        <p class="section-subtitle">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health filters.</p>
+        <p class="section-subtitle">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health
+            filters.</p>
 
         <div class="recipes-carousel">
             <button class="carousel-nav-btn prev-btn">
@@ -122,7 +158,7 @@
                     include 'fetch_recipes.php';
                 ?>
             </div>
-            
+
             <button class="carousel-nav-btn next-btn">
                 <i class="fas fa-chevron-right"></i>
             </button>
@@ -149,7 +185,7 @@
                 <h4>Ingredients</h4>
                 <p>Search 2 million recipes using keywords, 38 nutrients and 40 diet and health filters.</p>
             </div>
-             <div class="service-item">
+            <div class="service-item">
                 <i class="fas fa-clipboard-list service-icon"></i>
                 <h4>Easy Recipes</h4>
                 <p>Search 2 million recipes using keywords, 38 nutrients and 40 diet and health filters.</p>
@@ -161,9 +197,10 @@
             </div>
         </div>
     </section>
-    
+
     <footer>
-        </footer>
+    </footer>
 
 </body>
+
 </html>
