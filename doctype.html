@@ -38,7 +38,7 @@
         <!-- container per il logo -->
         <div class="logo-center-container">
 
-            <div class="logo-title left-title">Coocking</div>
+            <div class="logo-title left-title">Cooking</div>
 
             <div class="logo-center">
                 <img src="images/Logo.png" alt="COOKING Logo" class="main-logo-img">
@@ -79,92 +79,132 @@
         </video>
     </div>
 
-    <div id="search-bar-overlay" class="search-overlay" aria-hidden="true">
-        <form action="search_results.php" method="GET" class="search-form">
-            <i class="fas fa-search search-icon-inline"></i>
-            <input type="text" name="query" placeholder="Cerca ricette, ingredienti..." required>
-            <button type="submit" class="icon-btn search-submit-btn"><i class="fas fa-search"></i></button>
-            <button type="button" class="close-btn" onclick="toggleSearchBar(false)">&times;</button>
-        </form>
-    </div>
-
+    
     <section class="recipes-section">
-        <h2 class="section-title">OUR RECIPES</h2>
-        <p class="section-subtitle">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health
-            filters.</p>
-
-        <div class="recipes-carousel">
-            
-            <button class="carousel-nav-btn prev-btn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="recipe-cards-container">
-                <?php
-                    // Qui verrà incluso il codice PHP per la connessione al database e la visualizzazione delle ricette.
-                    // Vedere la Sezione 3 (Codice PHP) per l'implementazione.
-                    include 'fetch_recipes.php';
-                ?>
-            </div>
-
-            <button class="carousel-nav-btn next-btn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
+        
     </section>
 
     <section class="hero-section">
         <div class="hero-content">
-            <div class="recipe-cards-container">
-            <a href="dettaglio_ricetta.php?id=1" class="recipe-card">
-        
-                <div class="recipe-image-wrapper">
-                    <img src="images/ricette/tacos.png" alt="Sprout Salad" class="recipe-img">
-                </div>
-
-                <div class="recipe-info">
-                    <div class="recipe-actions">
-                        <i class="fas fa-star filled"></i>
-                    </div>
             
-                    <h3 class="recipe-title">Sprout Salad with Soft Boiled Eggs</h3>
-                    <p class="recipe-description">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health filters.</p>
-
-                    <div class="recipe-metadata">
-                        <span><i class="far fa-clock"></i> 20 mins</span>
-                        <span><i class="fas fa-signal"></i> Easy</span>
-                        <span><i class="fas fa-users"></i> 2 persons</span>
-                    </div>
+                <div class="top-list-header">
+                    <h2 class="section-title">Ricette del giorno</h2>
+                    <h3 class="section-subtitle">Le più ricercate</p>
                 </div>
-            </a>
-            </div>
+
+                <div class="top-list-carousel">
+                    <button class="nav-btn prev-btn" id="top-prev"><i class="fas fa-chevron-left"></i></button>
+
+                    <div class="top-list-container">
+                        <!-- Card 1 -->
+                        <div class="top-list-card" data-index="0">
+                            <div class="card-image">
+                                <img src="images/ricette/tacos.png" alt="Noodles">
+                            </div>
+                            <div class="card-content">
+                                <div class="rating"><i class="fas fa-star"></i> 8.1</div>
+                                <h3>Noodles three</h3>
+                                <p>White plate with dried shrimps</p>
+                                <div class="price-row">
+                                    <span class="price">12$</span>
+                                    <button class="add-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="top-list-card" data-index="1">
+                            <div class="card-image">
+                                <img src="images/ricette/tacos.png" alt="Noodles">
+                            </div>
+                            <div class="card-content">
+                                <div class="rating"><i class="fas fa-star"></i> 9.2</div>
+                                <h3>Noodles one</h3>
+                                <p>Noodles spicy boil with seafood</p>
+                                <div class="price-row">
+                                    <span class="price">20$</span>
+                                    <button class="add-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="top-list-card" data-index="2">
+                            <div class="card-image">
+                                <img src="images/ricette/tacos.png" alt="Noodles">
+                            </div>
+                            <div class="card-content">
+                                <div class="rating"><i class="fas fa-star"></i> 8.5</div>
+                                <h3>Noodles two</h3>
+                                <p>Noodles prawn spicy soup</p>
+                                <div class="price-row">
+                                    <span class="price">16$</span>
+                                    <button class="add-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="top-list-card" data-index="3">
+                            <div class="card-image">
+                                <img src="images/ricette/tacos.png" alt="Noodles">
+                            </div>
+                            <div class="card-content">
+                                <div class="rating"><i class="fas fa-star"></i> 7.8</div>
+                                <h3>Noodles four</h3>
+                                <p>Chicken noodles with herbs</p>
+                                <div class="price-row">
+                                    <span class="price">14$</span>
+                                    <button class="add-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="top-list-card" data-index="4">
+                            <div class="card-image">
+                                <img src="images/ricette/tacos.png" alt="Noodles">
+                            </div>
+                            <div class="card-content">
+                                <div class="rating"><i class="fas fa-star"></i> 9.5</div>
+                                <h3>Noodles five</h3>
+                                <p>Special spicy beef noodles</p>
+                                <div class="price-row">
+                                    <span class="price">22$</span>
+                                    <button class="add-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="top-list-card" data-index="5">
+                            <div class="card-image">
+                                <img src="images/ricette/tacos.png" alt="Noodles">
+                            </div>
+                            <div class="card-content">
+                                <div class="rating"><i class="fas fa-star"></i> 8.9</div>
+                                <h3>Noodles six</h3>
+                                <p>Vegetarian noodle soup</p>
+                                <div class="price-row">
+                                    <span class="price">15$</span>
+                                    <button class="add-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="nav-btn next-btn" id="top-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            
+
         </div>
     </section>
 
     <section class="recipes-section">
-        <h2 class="section-title">OUR RECIPES</h2>
-        <p class="section-subtitle">Search 2 million recipes using keywords, 38 nutrients and 40 diet and health
-            filters.</p>
-
-        <div class="recipes-carousel">
-            <button class="carousel-nav-btn prev-btn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="recipe-cards-container">
-                <?php
-                    // Qui verrà incluso il codice PHP per la connessione al database e la visualizzazione delle ricette.
-                    // Vedere la Sezione 3 (Codice PHP) per l'implementazione.
-                    include 'fetch_recipes.php';
-                ?>
-            </div>
-
-            <button class="carousel-nav-btn next-btn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
+        
     </section>
 
+    <!-- DA MODIFICARE -->
     <section class="services-section">
         <h2 class="section-title">FEATURES</h2>
         <h3 class="section-subtitle-large">OUR AWESOME SERVICES</h3>
@@ -201,6 +241,7 @@
     <footer>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
