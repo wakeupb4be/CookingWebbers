@@ -19,13 +19,9 @@ body {
     font-family: sans-serif;
     color: var(--secondary-color);
     line-height: 1.6;
-
-    /* Regola il margine predefinito */
     margin: 0;
     min-height: 100vh;
-    /* Assicura che il body sia alto almeno quanto la finestra del browser */
     position: relative;
-    /* Necessario per il posizionamento assoluto dell'overlay */
 }
 
 /* -------------------------------------------------- */
@@ -33,100 +29,77 @@ body {
 /* === 1. Intestazione iniziale (Header) e Struttura Base === */
 
 .main-header {
-    /* La posizione relativa è necessaria per l'immagine del logo */
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
-    /* Padding  */
+    padding: 20px 5%;
+    /* Padding adeguato */
     background-color: #fff;
     border-bottom: 1px solid #eee;
 }
 
-/* Immagine in alto a sinistra (rimane se ancora necessaria) */
-.header-image-left {
-    /* Larghezza aumentata per ospitare entrambe le icone */
+/* Contenitore Sinistro: Menu + Ricerca Pillola */
+.header-left {
     width: auto;
     display: flex;
     align-items: center;
     flex-shrink: 0;
     gap: 10px;
-    /* gap per distanziare le icone */
-}
-
-/* menu laterale */
-.main-nav {
-    display: none;
 }
 
 /* Nuovo Contenitore per Logo e Titoli Affiancati */
 .logo-center-container {
-    /* CHIAVE 1: Abilita Flexbox */
     display: flex;
-    /* Centra il logo e i titoli come un gruppo all'interno del contenitore */
     align-items: center;
     justify-content: center;
-    /* Permette a questo blocco di occupare tutto lo spazio centrale disponibile */
     flex-grow: 1;
+    /* Per occupare lo spazio centrale */
     margin-left: -150px;
+    /* Spostamento per centrare visivamente in assenza di menu a sx */
 }
 
-/* Logo al Centro (Ora solo l'immagine, non il contenitore Flex) */
+/* Logo al Centro */
 .logo-center {
-    /* Rimuoviamo flex-grow e text-align dal logo-center
-       perché il centraggio è gestito dal logo-center-container */
     text-align: center;
-    padding: 0 20px;
-    /* Spazio tra il logo e i titoli affiancati */
+    padding: 0 10px;
     flex-shrink: 0;
-    /* Impedisce al logo di rimpicciolirsi */
 }
 
 /* Stile per i nuovi titoli affiancati */
 .logo-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
     font-weight: 400;
     white-space: nowrap;
 }
 
 /* Dimensione Logo Centrale */
 .main-logo-img {
-    max-height: 100px;
-    /* Mantieni l'altezza desiderata */
+    max-height: 130px;
     width: auto;
-    /* CHIAVE 2: Assicura che l'immagine sia trattata come un blocco centrato */
     display: block;
 }
 
+/* Contenitore Pillola di Ricerca */
 .search-pill-container {
-    /* CHIAVE 1: Altezza e larghezza fisse per la pillola */
     height: 40px;
     width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* CHIAVE 2: Angoli arrotondati estremi per la forma ovale */
     border-radius: 20px;
-    /* Deve essere metà dell'altezza */
-
-    /* CHIAVE 3: Aspetto grafico */
     background-color: var(--bg-light);
-    /* Sfondo grigio chiaro */
     border: 1px solid #ddd;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-    /* Ombra interna leggera */
     transition: all 0.2s;
-
 }
 
 .search-pill-container:hover {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px #f1ac21;
 }
 
-/* Pulsante all'interno della pillola (per renderlo cliccabile) */
+/* Pulsante all'interno della pillola */
 .search-pill-btn {
     background: none;
     border: none;
@@ -145,30 +118,25 @@ body {
     font-size: 18px;
     color: #f1ac21;
     margin-right: 5px;
-    /* Sposta l'icona leggermente a sinistra all'interno della pillola */
 }
 
 .search-pill-text {
     color: #5a3e05;
     font-size: 15px;
-
     white-space: nowrap;
-    /* impedisce al testo di andare a capo*/
     margin-right: 5px;
-    /* margine */
-
 }
 
+/* Contenitore Destro: Menu Utente */
 .header-right {
     width: auto;
-    /* Lascia che il contenuto definisca la larghezza */
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-shrink: 0;
 }
 
-/*Pulsante icona (per Menù e Ricerca)*/
+/*Pulsante icona (per Menù)*/
 .icon-btn {
     background: none;
     border: none;
@@ -180,41 +148,7 @@ body {
 
 /* -------------------------------------------------- */
 
-/* === 2. Elementi di Stile Globali e Sezione Eroe === */
-
-.main-header {
-    /* Manteniamo le modifiche precedenti per centratura e dimensioni */
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-}
-
-/* Contenitore Sinistro: Ora ospita 2 icone (Menu + Ricerca) */
-.header-left {
-    /* Larghezza aumentata per ospitare entrambe le icone */
-    width: auto;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    /* Aggiungi un piccolo gap tra le due icone */
-    gap: 10px;
-}
-
-/* Contenitore Destro: Ora ospita il menu utente */
-.header-right {
-    width: auto;
-    /* Lascia che il contenuto definisca la larghezza */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-shrink: 0;
-}
-
-/* === 2. Stile Menu Login/Utente (Nuova Implementazione) === */
+/* === 2. Stile Menu Login/Utente === */
 
 .user-menu-container {
     position: relative;
@@ -231,10 +165,8 @@ body {
 
 .user-avatar-circle {
     width: 80px;
-    /* Dimensione del cerchio/ovale */
     height: 80px;
     border-radius: 50%;
-    /* Rendi l'ovale giallo come colore primario, se vuoi. Altrimenti, usa il bianco. */
     background-color: #fff;
     overflow: hidden;
     display: flex;
@@ -244,10 +176,8 @@ body {
 
 .user-avatar-img {
     width: 100%;
-    /* La dimensione dell'omino dentro il cerchio */
     height: 100%;
     object-fit: cover;
-    /* l'immaginde ricopre tutta l'area */
 }
 
 .user-arrow {
@@ -266,7 +196,6 @@ body {
 .user-dropdown-menu {
     position: absolute;
     top: 100%;
-    /* Posiziona sotto il pulsante */
     right: 0;
     width: 200px;
     background-color: #fff;
@@ -309,27 +238,39 @@ body {
     margin: 5px 0;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+/* Video di Sfondo */
+.video-sfondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #333;
-    /* Testo scuro per leggibilità sul giallo */
+.video-sfondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-darker);
-    /* Usa la variabile più scura */
+/* -------------------------------------------------- */
+
+/* === Sezioni Generiche e Hero Section (dove ora risiede il Top List) === */
+
+.recipes-section {
+    text-align: center;
+    padding: 60px 5%;
+    min-height: 300px;
+    
 }
 
 .hero-section {
+    /* La Hero Section ora contiene il Top List */
     display: flex;
     align-items: center;
     padding: 80px 5%;
@@ -340,94 +281,12 @@ body {
 
 .hero-content {
     flex: 1;
-}
-
-.hero-content h1 {
-    font-size: 56px;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    color: var(--text-color);
-    margin-bottom: 30px;
-    max-width: 450px;
-}
-
-.hero-image {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.main-fruit-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.social-profile-card {
-    position: absolute;
-    bottom: -30px;
-    left: 10%;
-    background: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-}
-
-.social-profile-card .profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
-}
-
-.video-sfondo {
-    /* Posizionamento a schermo intero */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    /* Mette il video dietro il contenuto della pagina */
-}
-
-.video-sfondo video {
-    /* Imposta larghezza e altezza al 100% del contenitore padre (.video-sfondo) */
-    width: 100%;
-    height: 100%;
-
-    /* 'cover' assicura che il video riempia tutto lo spazio tagliando gli eccessi,
-       senza deformare l'immagine */
-    object-fit: cover;
-
-    /* Posizionamento assoluto per sicurezza */
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* -------------------------------------------------- */
-
-/* === 3. Sezione Ricette e Servizi === */
-
-.recipes-section {
-    text-align: center;
-    padding: 60px 5%;
+    /* Permette al contenuto di occupare lo spazio */
 }
 
 .section-title {
     font-size: 30px;
     color: var(--primary-color);
-    /* Colore primario */
     margin-bottom: 10px;
 }
 
@@ -436,128 +295,151 @@ body {
     margin-bottom: 40px;
 }
 
-.recipes-carousel {
+
+/* === Top List Carousel === */
+
+.top-list-section {
+    flex: 1;
+    padding: 60px 5%;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.top-list-header {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.top-list-carousel {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
     position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.carousel-nav-btn {
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-}
-
-.carousel-nav-btn:hover {
-    background-color: var(--bg-light);
-}
-
-.recipe-cards-container {
+.top-list-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 30px;
-    overflow-x: auto;
-    padding: 10px 0;
-    flex-grow: 1;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    perspective: 1000px;
+    /* Necessario per l'effetto 3D */
 }
 
-.recipe-cards-container::-webkit-scrollbar {
-    display: none;
-}
-
-/* Stile della singola scheda ricetta */
-.recipe-card {
-    min-width: 300px;
-    max-width: 300px;
-    /* Fissa la larghezza massima per uniformità */
-    background: white;
-    border-radius: 15px;
-    /* Arrotondamento più pronunciato come nel design */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    /* Ombra più morbida */
-    overflow: hidden;
-    padding-bottom: 20px;
-    text-align: center;
-    /* Centra il contenuto come nel design */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
-    /* Impedisce alle card di restringersi */
-}
-
-.recipe-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.recipe-image-wrapper {
+.top-list-card {
     position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 70px 20px 20px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    transform: scale(1);
+    opacity: 0.9;
 }
 
+.top-list-card:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
 
-.recipe-card img {
+.card-image {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    border-radius: 50%;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
 }
 
-.recipe-card:hover img {
-    transform: scale(1.05);
-    /* Zoom leggero all'hover */
-}
-
-.recipe-info {
-    padding: 5px 20px 10px;
-}
-
-.recipe-info h3 {
+.card-content h3 {
     font-size: 18px;
-    margin: 5px 0;
+    margin: 10px 0 5px;
     color: var(--secondary-color);
 }
 
-.recipe-rating {
-    color: var(--primary-color);
-    /* Usa il colore primario (giallo) */
-    margin-bottom: 5px;
-}
-
-.recipe-meta {
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    margin-top: 10px;
-}
-
-.meta-item {
-    text-align: center;
+.card-content p {
+    font-size: 13px;
     color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
-.meta-item strong {
-    display: block;
-    color: var(--secondary-color);
+.rating {
+    color: #f1ac21;
+    font-weight: bold;
     font-size: 14px;
 }
 
-.meta-item i {
-    color: var(--primary-color);
-    margin-right: 5px;
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
-/* Sezione Servizi (Features) */
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+.add-btn {
+    background: #d48c2e;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background: #b57522;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.2);
+    color: var(--primary-color);
+}
+
+/* -------------------------------------------------- */
+
+/* === Sezione Servizi (Features) === */
+
 .services-section {
     padding: 80px 5%;
     text-align: center;
@@ -599,137 +481,4 @@ body {
 
 .service-item p {
     color: var(--text-color);
-}
-
-/* -------------------------------------------------- */
-
-/* === 4. Stile Menu Laterale (Sidebar) (NESSUNA MODIFICA) === */
-
-.sidebar-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    padding-top: 20px;
-}
-
-.sidebar-menu.open {
-    transform: translateX(0);
-    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.sidebar-menu ul {
-    list-style: none;
-    padding: 20px 0;
-}
-
-.sidebar-menu li a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: var(--secondary-color);
-    transition: background-color 0.3s;
-}
-
-.sidebar-menu li a:hover {
-    background-color: var(--bg-light);
-    color: var(--primary-color);
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: #999;
-}
-
-
-/* -------------------------------------------------- */
-
-/* === 5. Stile Barra di Ricerca Sovrapposta (NESSUNA MODIFICA) === */
-
-.search-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    z-index: 90;
-    display: none;
-    place-items: center;
-}
-
-.search-overlay.open {
-    display: grid;
-}
-
-.search-form-styled {
-    display: flex;
-    align-items: center;
-    /* Allinea verticalmente icona e input */
-    width: 80%;
-    max-width: 600px;
-
-    /* CHIAVE 1: Angoli arrotondati */
-    border-radius: 50px;
-
-    /* CHIAVE 2: Ombra e sfondo */
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-    /* Rimuoviamo il vecchio bordo inferiore giallo */
-    border-bottom: none;
-
-    position: relative;
-    padding: 10px 20px;
-    /* Padding interno per spazio */
-}
-
-/* Stile per il campo di input */
-.search-input-field {
-    flex-grow: 1;
-    border: none;
-    font-size: 18px;
-    /* Dimensione del font più gestibile per il placeholder */
-    padding: 0 10px;
-    outline: none;
-
-    /* Colore del placeholder (opzionale, per replicare l'immagine) */
-    /* Lo applichiamo direttamente all'input invece che al selettore ::placeholder per semplicità */
-    color: var(--text-color);
-}
-
-/* Stile per l'icona della lente */
-.search-icon-inline {
-    font-size: 18px;
-    /* Usa il colore primario (giallo) per la lente */
-    color: var(--primary-color);
-}
-
-/* Nascondiamo il pulsante submit se vogliamo affidarci solo al tasto Enter */
-.hidden-submit-btn {
-    display: none;
-}
-
-.search-form .close-btn {
-    position: absolute;
-    top: -10px;
-    right: -40px;
-    font-size: 40px;
 }
