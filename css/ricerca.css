@@ -1,0 +1,174 @@
+/* css/ricerca.css */
+
+body {
+    background-color: #f4f4f4; /* Un grigio molto chiaro per lo sfondo generale */
+}
+
+.search-page-container {
+    display: flex;
+    max-width: 1200px;
+    /* MARGINE SUPERIORE AUMENTATO: 
+       L'header è "fixed" e alto (Logo + Menu), quindi serve spazio 
+       prima che inizi il contenuto. 200px dovrebbe bastare. */
+    margin: 200px auto 40px auto; 
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* --- SIDEBAR FILTRI --- */
+.filters-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Ombra leggera */
+    border: 1px solid #eee;
+}
+
+.filters-sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2em;
+    border-bottom: 2px solid #F5D033; /* Richiamo al giallo del brand */
+    padding-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.filter-group select, 
+.filter-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    background-color: #fafafa;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: #F5D033;
+    background-color: #fff;
+}
+
+/* Pulsante Applica */
+.btn-apply {
+    background-color: #333;
+    color: #F5D033; /* Giallo su nero */
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-apply:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+/* --- AREA RISULTATI --- */
+.results-area {
+    flex-grow: 1;
+}
+
+.results-header {
+    margin-bottom: 25px;
+}
+
+.results-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* --- GRIGLIA RICETTE --- */
+.recipes-grid {
+    display: grid;
+    /* Griglia responsiva: le colonne si adattano automaticamente */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+    gap: 25px;
+}
+
+.recipe-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #F5D033;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-img {
+    height: 180px;
+    background: #f0f0f0;
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.15em;
+    margin: 0 0 10px 0;
+    color: #222;
+    font-weight: 700;
+}
+
+.card-info {
+    font-size: 0.9em;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-info i {
+    color: #F5D033; /* Icone gialle */
+    margin-right: 5px;
+}
+
+.card-vote {
+    color: #ffbf00;
+    font-weight: bold;
+    background: #fff8e1;
+    padding: 2px 8px;
+    border-radius: 10px;
+}

@@ -1,0 +1,25 @@
+.main-footer {
+    background-color: #333; /* Grigio scuro */
+    color: #ffffff;         /* Testo bianco per contrasto */
+    padding: 20px 0;
+    width: 100%;
+    margin: 0;       /* Aiuta a spingere il footer in basso se il contenuto è poco */
+    display: block;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Centra il gruppo di scritte */
+    gap: 40px;               /* Spazio tra le 4 scritte */
+    align-items: center;
+    
+    /* Rende il testo non selezionabile e cambia il cursore in quello standard */
+    user-select: none;
+    cursor: default;
+}
+
+.footer-container span {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    opacity: 0.8;            /* Un tocco di trasparenza per non sparare troppo */
+}

@@ -1,0 +1,129 @@
+/* css/home.css */
+
+/* Stile del Video di Background */
+#bg-video {
+    position: fixed;  /* Resta fisso mentre scorri */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;      /* Sta dietro a tutto il resto */
+    object-fit: cover; /* Copre tutto lo schermo senza deformarsi */
+    filter: brightness(0.7); /* Scurisce leggermente il video per leggere meglio il testo dell'header */
+}
+
+/* Spacer */
+.video-spacer {
+    height: 60vh; /* Altezza dello spazio vuoto iniziale (60% dell'altezza schermo) */
+    width: 100%;
+    /* Non ha background, così si vede il video sotto */
+}
+
+/* Contenitore bianco che scorre sopra il video */
+/* Modifica questo esistente: Rimuoviamo il background globale dal wrapper */
+.content-wrapper {
+    background-color: transparent; /* Rendiamo trasparente il contenitore generale */
+    padding: 0;                    /* Togliamo il padding globale */
+    box-shadow: none;              /* Via l'ombra globale */
+}
+
+/* Aggiungi questa NUOVA classe per le fasce opache */
+.section-band {
+    background-color: rgba(255, 255, 255, 0.85); /* Bianco quasi opaco (95%) */
+    padding: 40px 5%;              /* Spazio interno */
+    margin-bottom: 50px;           /* QUEL "MINIMO DI SPAZIO SOTTO" CHE VOLEVI */
+    border-radius: 20px;           /* Bordi arrotondati */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Ombra solo per la fascia */
+}
+
+/* Stile provvisorio per il pulsante (lo rifiniremo dopo) */
+.cta-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.btn-all-recipes {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #F5D033; /* Giallo Header */
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.2s;
+}
+
+.btn-all-recipes:hover {
+    transform: scale(1.05);
+    background-color: #e5c023;
+}
+
+/* --- GRIGLIA E CARD RICETTE --- */
+
+.grid-container {
+    display: flex;             /* Mette gli elementi in riga */
+    justify-content: center;   /* Li centra nella pagina */
+    gap: 30px;                 /* Spazio tra le card */
+    flex-wrap: wrap;           /* Se lo schermo è piccolo, vanno a capo */
+    margin-top: 20px;
+}
+
+/* La singola Card */
+.recipe-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 250px;              /* Larghezza fissa */
+    text-decoration: none;     /* Toglie la sottolineatura del link */
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;          /* Tiene l'immagine dentro i bordi arrotondati */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Effetto quando passi sopra col mouse */
+.recipe-card:hover {
+    transform: translateY(-10px); /* Si alza un po' */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Immagine */
+.card-image {
+    height: 180px;
+    width: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Taglia l'immagine per riempire il box senza deformarla */
+}
+
+/* Testo e Stelle */
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif; /* Assicurati che il font sia caricato o usane uno standard */
+}
+
+.stars {
+    color: #ccc; /* Colore base stelle vuote */
+    font-size: 14px;
+}
+
+.stars .filled {
+    color: #FFD700; /* Oro per le stelle piene */
+}
+
+.rating-num {
+    font-size: 12px;
+    color: #666;
+    margin-left: 5px;
+}

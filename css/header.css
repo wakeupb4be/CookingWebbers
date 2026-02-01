@@ -1,0 +1,200 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Previene scroll orizzontali indesiderati */
+}
+
+.main-header {
+    background: #F5D033;
+    border-bottom: 1px solid #333;
+    padding: 10px 5%;
+
+    position: fixed;
+    left: 0;    /* Forza l'attacco al bordo sinistro */
+    right: 0;   /* Forza l'attacco al bordo destro */
+    top: 0;
+    z-index: 1000;
+    
+    width: 100%;
+
+    box-sizing: border-box; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-top: 10px;
+}
+
+.logo img {
+    height: 80px; /* Regola questa cifra finché non ti piace la grandezza */
+    width: 80px;
+    object-fit: contain;
+    background-color: white; /* Sfondo bianco */
+    border-radius: 50%;      /* Lo rende un cerchio */
+    padding: 0px;           /* Distanza tra logo e bordo del cerchio */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Un'ombra leggera lo fa risaltare */
+    transition: transform 0.3s ease;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;        /* Evita che si spalmi troppo su schermi giganti */
+    margin: 0 auto;
+    
+}
+
+/* Stile Dropdown */
+
+/* Stile base per i pulsanti dei dropdown */
+.dropbtn {
+    background: none;
+    border: none;
+    font-family: 'Poppins', 'Segoe UI', sans-serif; /* Font moderno */
+    font-size: 18px;          /* Più grandi e leggibili */
+    font-weight: 600;         /* Semi-bold */
+    color: #333;
+    cursor: pointer;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;                 /* Spazio tra testo e icona */
+    transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+    color: #000;           /* Colore arancio cucina al passaggio */
+}
+
+/* Icona utente (se usi FontAwesome o un'immagine) */
+.user-menu .dropbtn {
+    font-size: 24px;          /* L'icona utente la facciamo un po' più grande */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    z-index: 100;
+    border-radius: 8px; /* Angoli arrotondati moderni */
+    padding: 10px 0;    /* Spazio sopra e sotto la lista */
+    border: 1px solid #000000;
+    
+}
+
+.dropdown-content a {
+    color: #444;        /* Grigio scuro, più leggibile del nero puro */
+    padding: 12px 20px; /* Spazio interno per rendere l'area cliccabile più grande */
+    text-decoration: none;
+    display: block;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Stato iniziale */
+    font-size: 15px;
+    font-weight: 400; /* Peso normale */
+
+    /* Transizione fluida per tutte le proprietà che cambiano */
+    transition: all 0.2s ease-in-out;
+    
+    /* TRUCCO PER L'ORDINE VERTICALE */
+    display: block;      /* Ogni link prende una riga intera, impilandosi verticalmente */
+    
+    transition: background 0.3s; /* Effetto fluido al passaggio del mouse */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+}
+
+.dropdown-content.right { right: 0; }
+
+/* --- EFFETTO HOVER SULLE VOCI --- */
+.dropdown-content a:hover {
+    background-color: #f8f9fa; /* Grigio chiarissimo al passaggio */
+    color: #000;            /* Cambia colore al testo (es. arancione "cucina") */
+    
+    /* Ingrandimento e grassetto */
+    font-size: 17px;     /* Aumenta di 2px (regola a piacere) */
+    font-weight: 700;    /* Testo in grassetto (Bold) */
+    
+    /* Opzionale: un leggero spostamento verso destra per un look premium */
+    padding-left: 25px;
+
+}
+
+/* --- LINEA DI SEPARAZIONE (OPZIONALE) --- */
+/* Se vuoi separare il Logout o altre sezioni nell'area utente */
+.dropdown-content hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Barra di ricerca */
+/* Contenitore esterno per il posizionamento */
+.search-container {
+    flex: 0 1 500px; /* Larghezza massima della barra */
+    margin: 0 20px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* L'icona posizionata sopra l'input a sinistra */
+.search-icon {
+    position: absolute;
+    left: 20px;
+    color: #6a5f8a; /* Colore violaceo come nell'immagine */
+    font-size: 18px;
+    pointer-events: none; /* L'icona non blocca il click sull'input */
+}
+
+/* L'input in stile "Pill" */
+.search-input {
+    width: 100%;
+    padding: 15px 15px 15px 55px; /* Molto spazio a sinistra per l'icona */
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #6a5f8a;
+    
+    /* SFONDO E BORDI */
+    background-color: #f1f0f6; /* Grigio/viola chiarissimo */
+    border: 2px solid transparent;
+    border-radius: 50px; /* Effetto pillola */
+    
+    /* OMBRA SOFT */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* EFFETTO FOCUS: Quando clicchi per scrivere */
+.search-input:focus {
+    background-color: #ffffff;
+    border-color: #e2e0ed;
+    box-shadow: 0 6px 20px rgba(106, 95, 138, 0.1);
+    transform: translateY(-1px); /* Leggero sollevamento */
+}
+
+/* Placeholder personalizzato */
+.search-input::placeholder {
+    color: #aaa4c0;
+    opacity: 1;
+}
